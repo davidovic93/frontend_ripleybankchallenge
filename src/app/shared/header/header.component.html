@@ -1,0 +1,24 @@
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+
+        <span class="fs-4 text-info">Mi Banco_. | Nueva Transferencia</span>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a class="nav-link px-2 text-muted" [routerLink]="['./mis-destinatarios']" routerLinkActive="btn btn-outline-info is-active" >Mis destinatarios</a></li>
+        <li><a class="nav-link px-2 text-muted" [routerLink]="['./transferencia']" routerLinkActive="btn btn-outline-info is-active" >Transferir</a></li>
+        <li><a class="nav-link px-2 text-muted" [routerLink]="['./historial-transferencia']" routerLinkActive="btn btn-outline-info is-active" >Historial de Transferencias</a></li>
+      </ul>
+
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        <span class="text-success">Hola {{this._user.usuario.firstname + ' ' + this._user.usuario.lastname}}!</span>
+      </form>
+
+      <div class="text-end">
+        <button type="button" (click)="_user.logout()" class="btn btn-danger">Logout</button>
+      </div>
+    </div>
+  </div>
+</header>

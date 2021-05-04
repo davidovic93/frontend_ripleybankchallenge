@@ -1,0 +1,25 @@
+
+  <div class="body bg-info tr-white-7">
+    <div class="logincard">
+      <div class="row">
+       <div class="card p-5 animated fadeInLeft">
+        <form ngNativeValidate #f="ngForm" (ngSubmit)="login(f)" class="col-lg-6 form-signin" style="margin: auto;">
+
+          <h1 class="text-info bolder">Mi Banco_.</h1>
+          <h1 class="h3 mb-3 font-weight-normal">Inicio de sesión</h1>
+          <label for="inpuRut" class="sr-only">Rut</label>
+          <input ngModel type="text" id="inputRut" name="rut" class="form-control" placeholder="Ingrese su rut" required  autofocus="">
+          <label for="inputPassword" class="sr-only">Clave</label>
+          <input ngModel type="password" id="inputPassword" name="password" class="mt-3 form-control" placeholder="Ingrese su clave" required>
+
+          <button class="btn btn-lg btn-info btn-block mt-5 text-white" type="submit">Iniciar sesión</button>
+          <p class="mt-5 mb-3 text-muted text-center">© DAVID MALDONADO | 2021</p>
+          <div class="col-sm-12 text-center">
+            No tienes una cuenta? <a routerLink="/register" class="text-primary m-l-5"><b>Registrese</b></a>
+        </div>
+        </form>
+       </div>
+      </div>
+    </div>
+
+  </div>

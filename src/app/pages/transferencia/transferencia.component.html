@@ -1,0 +1,63 @@
+<div class="main">
+  <div class="title-page">
+    <h1>Transferir</h1>
+  </div>
+  <div class="row animated fadeIn">
+    <div class="col-lg-12" style="margin: 0 auto">
+      <div class="card text-center tr-white-7">
+        <div class="card-body">
+
+          <div class="col-lg-4" style="margin: 0 auto">
+            <form ngNativeValidate #f="ngForm" (ngSubmit)="realizarTransferencia(f)" class="form p-t-20">
+
+              <!-- buscar destinatario, fila 1-->
+              <div class="row">
+                <div class="form-group">
+                  <label class="block-row-l">Destinatario <span class="red-astrix">*</span></label>
+                  <select (change)="cambiaDestinatario()"  [(ngModel)]="valor" name="destinatario" class="form-control">
+                    <option value=""> Seleccione destinatario</option>
+                    <option *ngFor="let destinatario of destinatarios" [value]="destinatario.uid">
+                      {{destinatario.destinatario_name}}
+                    </option>
+                  </select>
+                </div>
+
+              </div>
+
+              <!-- Detalle destinatario, fila 2-->
+              <div *ngIf="valor.length > 0" class="row">
+                <div class="form-group ">
+                  <label class="block-row-l bolder" for="">Detalle del destinatario</label>
+
+                  <span class="block-row-l"> Nombre:        <span class="bolder text-info">{{transferencia.destinatario_name}}</span></span>
+                  <span class="block-row-l"> Correo:        <span class="bolder text-info">{{transferencia.email}}</span></span>
+                  <span class="block-row-l"> Banco:         <span class="bolder text-info">{{transferencia.bank}}</span></span>
+                  <span class="block-row-l"> Tipo cuenta:   <span class="bolder text-info">{{transferencia.type_account}}</span></span>
+
+                </div>
+              </div>
+
+
+              <!-- monto, fila 3-->
+              <div *ngIf="valor.length > 0" class="row">
+                <div class="form-group col-lg-6">
+                  <label class="block-row-l" for="exampleInputuname">Monto <span class="red-astrix">*</span></label>
+                  <div class="input-group">
+                    <div class="input-group-addon"></div>
+                    <input [ngModel]="transferencia.amount" type="number" name="amount"
+                      class="form-control" maxlength="30" required placeholder="" />
+                  </div>
+                </div>
+
+              </div>
+
+              <button *ngIf="valor.length > 0" type="submit" class="col-lg-6 btn btn-success waves-effect waves-light m-r-10">
+                Transferir
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

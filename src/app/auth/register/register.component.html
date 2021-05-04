@@ -1,0 +1,75 @@
+<div class="body bg-info tr-white-7">
+  <div class="logincard">
+    <div class="row">
+     <div class="card p-5 animated fadeInRight">
+      <form ngNativeValidate #f="ngForm" (ngSubmit)="register(f)" class="col-lg-12 form-signin" style="margin: auto;">
+
+        <h1 class="text-info bolder">Mi Banco_.</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Registro de usuario</h1>
+        <!-- rut y nombre, fila 1-->
+        <div class="row">
+          <div class="form-group col-lg-6">
+            <label class="block-row-l" for="exampleInputuname">RUT <span class="red-astrix">*</span></label>
+            <div class="input-group">
+              <div class="input-group-addon"></div>
+              <input [ngModel]="usuario.rut" type="text" #rut name="rut" class="form-control" maxlength="15"
+                required placeholder="" />
+            </div>
+
+          </div>
+          <div class="form-group col-lg-6">
+            <label class="block-row-l" for="exampleInputuname">Nombre <span class="red-astrix">*</span></label>
+            <div class="input-group">
+              <div class="input-group-addon"></div>
+              <input [ngModel]="usuario.firstname" type="text" name="firstname" class="form-control" maxlength="30"
+                required placeholder="" />
+            </div>
+          </div>
+        </div>
+
+         <!-- email y apellido, fila 1-->
+         <div class="row">
+          <div class="form-group col-lg-6">
+            <label class="block-row-l" for="exampleInputuname">Email <span class="red-astrix">*</span></label>
+            <div class="input-group">
+              <div class="input-group-addon"></div>
+              <input [ngModel]="usuario.email" type="text"  name="email" class="form-control" maxlength="50"
+                required placeholder="" />
+            </div>
+
+          </div>
+          <div class="form-group col-lg-6">
+            <label class="block-row-l" for="exampleInputuname">Apellido <span class="red-astrix">*</span></label>
+            <div class="input-group">
+              <div class="input-group-addon"></div>
+              <input [ngModel]="usuario.lastname" type="text" name="lastname" class="form-control" maxlength="30"
+                required placeholder="" />
+            </div>
+          </div>
+        </div>
+
+         <!-- email y apellido, fila 1-->
+         <div class="row">
+          <div class="form-group col-lg-6">
+            <label class="block-row-l" for="exampleInputuname">Password <span class="red-astrix">*</span></label>
+            <div class="input-group">
+              <div class="input-group-addon"></div>
+              <input [ngModel]="usuario.password" type="password"  name="password" class="form-control" maxlength="15"
+                required placeholder="" />
+            </div>
+
+          </div>
+
+        </div>
+
+        <button class="btn btn-lg btn-info btn-block mt-5 text-white" type="submit">Registrarse</button>
+        <p class="mt-5 mb-3 text-muted text-center">© DAVID MALDONADO | 2021</p>
+        <div class="col-sm-12 text-center">
+          Ya tienes una cuenta? <a routerLink="/login" class="text-primary m-l-5"><b>Inicia sesión</b></a>
+      </div>
+      </form>
+     </div>
+    </div>
+  </div>
+
+</div>

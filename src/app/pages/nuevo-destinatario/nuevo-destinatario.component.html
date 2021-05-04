@@ -1,0 +1,98 @@
+<div class="main">
+  <div class="title-page">
+    <h1>Nuevo Destinatario</h1>
+  </div>
+  <div class="row animated fadeIn">
+    <div class="col-lg-12" style="margin: 0 auto">
+      <div class="card text-center tr-white-7">
+        <div class="card-body">
+          <div class="col-lg-6" style="margin: 0 auto">
+            <form ngNativeValidate #f="ngForm" (ngSubmit)="crearDestinatario(f)" class="form p-t-20">
+
+              <!-- rut y nombre, fila 1-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label class="block-row-l" for="exampleInputuname">RUT <span class="red-astrix">*</span></label>
+                  <div class="input-group">
+                    <div class="input-group-addon"></div>
+                    <input [ngModel]="destinatario.rut" type="text" #rut name="rut" class="form-control" maxlength="15"
+                      required placeholder="" />
+                  </div>
+
+                </div>
+                <div class="form-group col-lg-6">
+                  <label class="block-row-l" for="exampleInputuname">Nombre <span class="red-astrix">*</span></label>
+                  <div class="input-group">
+                    <div class="input-group-addon"></div>
+                    <input [ngModel]="destinatario.destinatario_name" type="text" name="destinatario_name" class="form-control" maxlength="30"
+                      required placeholder="" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- correo y fono, fila 2-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label class="block-row-l" for="exampleInputuname">Correo <span class="red-astrix">*</span></label>
+                  <div class="input-group">
+                    <div class="input-group-addon"></div>
+                    <input [ngModel]="destinatario.email" type="text" name="email" class="form-control" maxlength="30"
+                      required placeholder="" />
+                  </div>
+                </div>
+                <div class="form-group col-lg-6">
+                  <label class="block-row-l" for="exampleInputuname">Teléfono <span class="red-astrix">*</span></label>
+                  <div class="input-group">
+                    <div class="input-group-addon"></div>
+                    <input [ngModel]="destinatario.phone" type="text" name="phone" class="form-control" maxlength="9"
+                      required placeholder="" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Banco y Tipo cuenta, fila 3-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label class="block-row-l">Banco de destino <span class="red-astrix">*</span></label>
+                  <select [ngModel]="destinatario.bank" name="bank" class="form-control">
+                    <option value=""> Seleccione banco</option>
+                    <option *ngFor="let bank of banks" [value]="bank.name">
+                      {{bank.name}}
+                  </option>
+
+                  </select>
+                </div>
+                <div class="form-group col-lg-6">
+                  <label class="block-row-l">Tipo de Cuenta <span class="red-astrix">*</span></label>
+                  <select [ngModel]="destinatario.type_account" name="type_account" class="form-control">
+                    <option value=""> Seleccione tipo cuenta</option>
+                    <option value="Cuenta Vista"> Cuenta vista</option>
+                    <option value="Cuenta Corriente"> Cuenta corriente</option>
+
+                  </select>
+                </div>
+              </div>
+
+              <!--nro cuenta, fila 2-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label class="block-row-l" for="exampleInputuname">N° de Cuenta <span class="red-astrix">*</span></label>
+                  <div class="input-group">
+                    <div class="input-group-addon"></div>
+                    <input [ngModel]="destinatario.number_account" type="text" name="number_account"
+                      class="form-control" maxlength="30" required placeholder="" />
+                  </div>
+                </div>
+
+              </div>
+
+              <button type="submit" class="col-lg-6 btn btn-success waves-effect waves-light m-r-10">
+                Crear Destinatario
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
